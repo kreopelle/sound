@@ -21,22 +21,25 @@ class App extends Component {
   }
 
   login(event){
+    // currently username and password in url as query?
     event.preventDefault()
+    // later refactor to pull from this.state via an onChange handler
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
-    const request = {"auth": {"email": email, "password": password}}
-    console.log(request)
-    fetch("/api/user_token", {
+    fetch("http://localhost:3000/api/user_token", {
       method: "POST",
-      data: request,
-      dataType: "json"
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        auth: {
+          email: email,
+          password: password
+        }
+      })
     })
     .then(resp => resp.json())
-    .then(result => {
-      console.log(result)
-      return localStorage.setItem("jwt", result.jwt)
-      }
-    )
+    .then(data => localStorage.setItem("jwt", data.jwt))
 
   }
 

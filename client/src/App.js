@@ -4,14 +4,19 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      sounds: "",
+      sounds: '',
     }
-    // gives access to "this" to change state with getSounds()
+    // gives access to 'this' to change state with getSounds()
     this.getSounds = this.getSounds.bind(this)
   }
 
   getSounds() {
-    fetch("/api/sounds")
+    fetch('/api/sounds', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+      },
+    })
     .then(resp => resp.json())
     .then(sounds => this.setState({
       // would like to push each record as indiv objects to a sounds array
@@ -21,15 +26,15 @@ class App extends Component {
   }
 
   login(event){
-    // currently username and password in url as query?
     event.preventDefault()
+    debugger
     // later refactor to pull from this.state via an onChange handler
-    const email = document.querySelector("#email").value
-    const password = document.querySelector("#password").value
-    fetch("http://localhost:3000/api/user_token", {
-      method: "POST",
+    const email = event.target.children.email.value
+    const password = event.target.children.password.value
+    fetch('http://localhost:3000/api/user_token', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         auth: {
@@ -39,7 +44,7 @@ class App extends Component {
       })
     })
     .then(resp => resp.json())
-    .then(data => localStorage.setItem("jwt", data.jwt))
+    .then(data => localStorage.setItem('jwt', data.jwt))
 
   }
 
@@ -48,29 +53,29 @@ class App extends Component {
       <div className='App'>
         <h1>Sounds</h1>
 
-        <div className="login">
+        <div className='login'>
           <form onSubmit={this.login}>
-            <label htmlFor="email">Email: </label>
+            <label htmlFor='email'>Email: </label>
             <br />
             <input
-              name="email"
-              id="email"
-              type="email"
+              name='email'
+              id='email'
+              type='email'
             />
             <br /><br />
-            <label htmlFor="password">Password: </label>
+            <label htmlFor='password'>Password: </label>
             <br />
             <input
-              name="password"
-              id="password"
-              type="password"
+              name='password'
+              id='password'
+              type='password'
             />
             <br /><br />
-            <input type="submit" />
+            <input type='submit' />
           </form>
         </div>
 
-        <div className="sounds">
+        <div className='sounds'>
           <br />
           <button onClick={this.getSounds}>Get Sounds</button>
           <p>{this.state.sounds}</p>

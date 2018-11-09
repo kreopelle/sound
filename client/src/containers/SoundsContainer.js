@@ -1,5 +1,6 @@
 // business logic for displaying sounds
 import React, { Component } from 'react'
+import CreateSound from '../components/sounds/CreateSound.js'
 
 class SoundsContainer extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class SoundsContainer extends Component {
     return (
       <div className='sounds'>
         <h1>Sounds</h1>
+        <CreateSound />
         <button onClick={this.getSounds}>Get Sounds</button>
         <p>{this.state.sounds}</p>
       </div>

@@ -5,6 +5,9 @@ export default function manageSounds(state = {
     case 'ADD_SOUND':
       return { sounds: state.sounds.concat(action.payload) }
 
+    case 'FETCH_SOUNDS':
+      return action.sounds
+    
     default:
       return state;
   }

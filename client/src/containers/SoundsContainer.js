@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 import CreateSound from '../components/sounds/CreateSound.js'
 import { connect } from 'react-redux'
 import Sounds from '../components/sounds/Sounds.js'
+import { fetchSounds } from '../actions/SoundActions'
 
 class SoundsContainer extends Component {
+  handleOnClick = () => this.props.fetchSounds()
+
   // constructor(props) {
   //   super(props)
   //   this.state = {
@@ -35,6 +38,7 @@ class SoundsContainer extends Component {
         <h1>Sounds</h1>
         <CreateSound />
         <Sounds sounds={this.props.sounds} />
+        <button onClick={this.handleOnClick}>Fetch Sounds</button>
         {/* <button onClick={this.getSounds}>Get Sounds</button> */}
       </div>
     )
@@ -46,4 +50,8 @@ const mapStateToProps = state => {
   return { sounds: state.sounds }
 }
 
-export default connect(mapStateToProps)(SoundsContainer)
+const mapDispatchToProps = dispatch => {
+  return { fetchSounds: () => dispatch(fetchSounds()) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SoundsContainer)

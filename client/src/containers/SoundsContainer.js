@@ -1,31 +1,32 @@
 // business logic for displaying sounds
 import React, { Component } from 'react'
 import CreateSound from '../components/sounds/CreateSound.js'
+import { connect } from 'react-redux'
 
 class SoundsContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      sounds: '',
-    }
-    // gives access to 'this' to change state with getSounds()
-    this.getSounds = this.getSounds.bind(this)
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     sounds: '',
+  //   }
+  //   // gives access to 'this' to change state with getSounds()
+  //   this.getSounds = this.getSounds.bind(this)
+  // }
 
-  getSounds() {
-    fetch('/api/sounds', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-      },
-    })
-    .then(resp => resp.json())
-    .then(sounds => this.setState({
-      // would like to push each record as indiv objects to a sounds array
-      sounds: JSON.stringify(sounds)
-    }
-    ))
-  }
+  // getSounds() {
+  //   fetch('/api/sounds', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+  //     },
+  //   })
+  //   .then(resp => resp.json())
+  //   .then(sounds => this.setState({
+  //     // would like to push each record as indiv objects to a sounds array
+  //     sounds: JSON.stringify(sounds)
+  //   }
+  //   ))
+  // }
 
   render() {
     return (
@@ -40,4 +41,4 @@ class SoundsContainer extends Component {
 
 }
 
-export default SoundsContainer
+export default connect()(SoundsContainer)

@@ -37,15 +37,18 @@ class LoginContainer extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
-        <label htmlFor='email'>Email: </label>
-        <input name='email' id='email' type='email'onChange={this.handleOnChange} />
-        <br />
-        <label htmlFor='password'>Password: </label>
-        <input name='password' id='password' type='password' onChange={this.handleOnChange} />
-        <br />
-        <input type='submit' />
-      </form>
+      <div>
+        <h1>Login</h1>
+        <form onSubmit={this.handleLogin}>
+          <label htmlFor='email'>Email: </label>
+          <input name='email' id='email' type='email'onChange={this.handleOnChange} />
+          <br />
+          <label htmlFor='password'>Password: </label>
+          <input name='password' id='password' type='password' onChange={this.handleOnChange} />
+          <br />
+          <input type='submit' />
+        </form>
+      </div>
     )
   }
 

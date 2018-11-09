@@ -35,7 +35,7 @@ class CreateSound extends Component {
 
 }
 
-mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     addSound: formData => dispatch({ type: "ADD_SOUND", payload: formData })
   }

@@ -6,7 +6,9 @@ import Sounds from '../components/sounds/Sounds.js'
 import { fetchSounds } from '../actions/SoundActions'
 
 class SoundsContainer extends Component {
-  handleOnClick = () => this.props.fetchSounds()
+  componentDidMount(){
+    this.props.fetchSounds()
+  }
 
   // constructor(props) {
   //   super(props)
@@ -38,7 +40,7 @@ class SoundsContainer extends Component {
         <h1>Sounds</h1>
         <CreateSound />
         <Sounds sounds={this.props.sounds} />
-        <button onClick={this.handleOnClick}>Fetch Sounds</button>
+        {/* <button onClick={this.handleOnClick}>Fetch Sounds</button> */}
         {/* <button onClick={this.getSounds}>Get Sounds</button> */}
       </div>
     )

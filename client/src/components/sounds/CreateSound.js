@@ -2,13 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class CreateSound extends Component {
-  constructor() {
-    super()
-    this.state = {
+  state = {
       title: '',
       description: '',
     }
-  }
 
   handleOnChange = event => {
     this.setState({
@@ -16,10 +13,15 @@ class CreateSound extends Component {
     })
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+    this.props.addSound(this.state)
+  }
+
   render(){
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <p>
             <label>create sound: </label>
             <input type="text" name="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
@@ -33,4 +35,10 @@ class CreateSound extends Component {
 
 }
 
-export default CreateSound
+mapDispatchToProps = dispatch => {
+  return {
+    addSound: formData => dispatch({ type: "ADD_SOUND", payload: formData })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(CreateSound)

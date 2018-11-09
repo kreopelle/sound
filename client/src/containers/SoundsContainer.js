@@ -33,12 +33,15 @@ class SoundsContainer extends Component {
       <div className='sounds'>
         <h1>Sounds</h1>
         <CreateSound />
-        <button onClick={this.getSounds}>Get Sounds</button>
-        <p>{this.state.sounds}</p>
+        {/* <button onClick={this.getSounds}>Get Sounds</button> */}
       </div>
     )
   }
 
 }
 
-export default connect()(SoundsContainer)
+const mapStateToProps = state => {
+  return { sounds: state.sounds }
+}
+
+export default connect(mapStateToProps)(SoundsContainer)

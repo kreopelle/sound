@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import CreateSound from '../components/sounds/CreateSound.js'
 import { connect } from 'react-redux'
-import Sound from '../components/sounds/Sound.js'
+import Sounds from '../components/sounds/Sounds.js'
 
 class SoundsContainer extends Component {
   // constructor(props) {
@@ -29,14 +29,12 @@ class SoundsContainer extends Component {
   //   ))
   // }
 
-  renderSounds = () => this.props.sounds.map((sound, id) => <Sound key={id} sound={sound} />)
-
   render() {
     return (
       <div className='sounds'>
         <h1>Sounds</h1>
         <CreateSound />
-        {this.renderSounds()}
+        <Sounds sounds={this.props.sounds} />
         {/* <button onClick={this.getSounds}>Get Sounds</button> */}
       </div>
     )

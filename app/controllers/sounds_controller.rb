@@ -2,6 +2,11 @@ class SoundsController < ApplicationController
   before_action :authenticate_user
   before_action :set_sound, only: [:show, :update, :destroy]
 
+  # for admin only access
+  # if current_user.admin?
+    # => add code here to grant admin access
+  # end 
+
   def index
     @sounds = Sound.all
 

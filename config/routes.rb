@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   scope '/api' do
-    get :food, to: 'foods#index'
+    resources :sounds, except: [:new, :edit]
   end
 end

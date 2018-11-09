@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LoginContainer from './containers/LoginContainer.js'
 
 class App extends Component {
   constructor(props) {
@@ -25,56 +26,12 @@ class App extends Component {
     ))
   }
 
-  login(event){
-    event.preventDefault()
-    debugger
-    // later refactor to pull from this.state via an onChange handler
-    const email = event.target.children.email.value
-    const password = event.target.children.password.value
-    fetch('http://localhost:3000/api/user_token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        auth: {
-          email: email,
-          password: password
-        }
-      })
-    })
-    .then(resp => resp.json())
-    .then(data => localStorage.setItem('jwt', data.jwt))
-
-  }
-
   render() {
     return (
       <div className='App'>
+        <LoginContainer />
+
         <h1>Sounds</h1>
-
-        <div className='login'>
-          <form onSubmit={this.login}>
-            <label htmlFor='email'>Email: </label>
-            <br />
-            <input
-              name='email'
-              id='email'
-              type='email'
-            />
-            <br /><br />
-            <label htmlFor='password'>Password: </label>
-            <br />
-            <input
-              name='password'
-              id='password'
-              type='password'
-            />
-            <br /><br />
-            <input type='submit' />
-          </form>
-        </div>
-
         <div className='sounds'>
           <br />
           <button onClick={this.getSounds}>Get Sounds</button>

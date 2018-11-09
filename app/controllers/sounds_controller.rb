@@ -1,4 +1,5 @@
 class SoundsController < ApplicationController
+  before_action :authenticate_user
   before_action :set_sound, only: [:show, :update, :destroy]
 
   def index

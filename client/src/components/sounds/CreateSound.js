@@ -13,21 +13,22 @@ class CreateSound extends Component {
   }
 
   handleOnSubmit = event => {
-    event.preventDefault()
+    const title = event.target.children.title.value
+    const description = event.target.children.description.value
+    const payload = {sound: {title: title, description: description}}
     debugger
-    // this.props.postSound(this.state)
+    event.preventDefault()
+    this.props.postSound(payload)
   }
 
   render(){
     return(
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <p>
-            <label>create sound: </label>
-            <input type="text" name="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
-            <input type="text" name="description" placeholder="description" value={this.state.description} onChange={this.handleOnChange} />
-            <input type="submit" />
-          </p>
+          <label>create sound: </label>
+          <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
+          <input type="text" name="description" id="description" placeholder="description" value={this.state.description} onChange={this.handleOnChange} />
+          <input type="submit" />
         </form>
       </div>
     )

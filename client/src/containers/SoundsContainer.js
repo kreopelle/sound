@@ -14,7 +14,7 @@ class SoundsContainer extends Component {
     return (
       <div className='sounds'>
         <h1>Sounds</h1>
-        <CreateSound />
+        <CreateSound postSound={this.props.postSound}/>
         <Sounds sounds={this.props.sounds} />
       </div>
     )
@@ -28,7 +28,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return { fetchSounds: () => dispatch(fetchSounds()),
-    postSound: (newSound) => dispatch(postSound(newSound))
+    postSound: (sound) => dispatch(postSound(sound))
   }
 }
 

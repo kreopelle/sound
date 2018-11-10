@@ -4,7 +4,7 @@
 
   export function fetchSounds(){
     return (dispatch) => {
-      dispatch({ type: 'START_FETCHING_SOUNDS_REQUEST' })
+      dispatch({ type: 'START_FETCH_SOUNDS_REQUEST' })
       return fetch('/api/sounds')
       .then(resp => {
         if (resp.ok) {
@@ -20,16 +20,22 @@
     }
   }
 
-  export function postSound(newSound){
+  export function postSound(sound){
     return (dispatch) => {
-      dispatch({ type: 'START_POSTING_SOUND_REQUEST' })
+      dispatch({ type: 'START_POST_SOUND_REQUEST' })
       return fetch('/api/sounds', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
-          sound: {newSound}
-        })
+          sound: {
+            title: sound.title,
+            description: sound.description
+          }
       })
-      .then(resp => resp.json())
-      .then(data => dispatch({ type: 'POST_SOUND', payload: data }))
+    })
+    .then(resp => resp.json())
+    .then(data => dispatch({ type: 'POST_SOUND', payload: data }))
     }
   }

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import CreateSound from '../components/sounds/CreateSound.js'
 import { connect } from 'react-redux'
 import Sounds from '../components/sounds/Sounds.js'
-import { fetchSounds } from '../actions/SoundActions'
+import { fetchSounds, postSound } from '../actions/SoundActions'
 
 class SoundsContainer extends Component {
   componentDidMount(){
@@ -27,7 +27,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return { fetchSounds: () => dispatch(fetchSounds()) }
+  return { fetchSounds: () => dispatch(fetchSounds()),
+    postSound: (newSound) => dispatch(postSound(newSound))
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SoundsContainer)

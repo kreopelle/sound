@@ -8,6 +8,9 @@ export default function manageSounds(state = {
     case 'FETCH_SOUNDS':
       return { sounds: action.sounds }
 
+    case 'POST_SOUND':
+      return { sounds: [...state.sounds, action.payload] }
+
     default:
       return state;
   }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class CreateSound extends Component {
   state = {
@@ -15,7 +14,8 @@ class CreateSound extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.addSound(this.state)
+    debugger
+    // this.props.postSound(this.state)
   }
 
   render(){
@@ -35,10 +35,4 @@ class CreateSound extends Component {
 
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addSound: formData => dispatch({ type: "ADD_SOUND", payload: formData })
-  }
-}
-
-export default connect(null, mapDispatchToProps)(CreateSound)
+export default CreateSound

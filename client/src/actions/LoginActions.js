@@ -15,7 +15,9 @@ export function login(auth){
     .then(resp => resp.json())
     .then(data => {
       localStorage.setItem('jwt', data.jwt)
-      dispatch({ type: 'LOGIN', payload: data })
+      dispatch({ type: 'LOGIN', email: auth.auth.email })
     })
   }
 }
+
+// should the token be available in state?

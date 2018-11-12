@@ -3,8 +3,7 @@ export default function loginReducer(state = {
 }, action) {
   switch(action.type){
     case 'LOGIN':
-      console.log(action.payload )
-      return {...state, logged_in: true }
+      return { logged_in: true, current_user: action.email }
 
     default:
       return state;

@@ -21,7 +21,6 @@
   }
 
   export function postSound(sound){
-    debugger
     return (dispatch) => {
       dispatch({ type: 'START_POST_SOUND_REQUEST' })
       return fetch('/api/sounds', {

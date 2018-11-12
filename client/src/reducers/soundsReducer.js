@@ -1,15 +1,13 @@
-export default function soundsReducer(state = {
-  sounds: [],
-}, action) {
+export default function soundsReducer(state = [], action) {
   switch(action.type){
     case 'ADD_SOUND':
-      return { sounds: state.sounds.concat(action.payload) }
+      return state.concat(action.payload)
 
     case 'FETCH_SOUNDS':
-      return { sounds: action.sounds }
+      return state.concat(action.sounds)
 
     case 'POST_SOUND':
-      return { sounds: [...state.sounds, action.payload] }
+      return [...state, action.payload]
 
     default:
       return state;

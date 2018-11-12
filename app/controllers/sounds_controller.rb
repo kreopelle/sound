@@ -45,6 +45,6 @@ class SoundsController < ApplicationController
     end
 
     def sound_params
-      params.require(:sound).permit(:title, :description)
+      params.require(:sound).permit(:title, :description, :file)
     end
 end

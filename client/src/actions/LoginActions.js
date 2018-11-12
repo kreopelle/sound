@@ -10,12 +10,7 @@ export function login(auth){
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        auth: {
-          email: email,
-          password: password
-        }
-      })
+      body: JSON.stringify(auth)
     })
     .then(resp => resp.json())
     .then(data => {
@@ -23,3 +18,4 @@ export function login(auth){
       dispatch({ type: 'LOGIN', payload: data })
     })
   }
+}

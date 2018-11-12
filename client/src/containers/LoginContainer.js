@@ -1,5 +1,7 @@
 // logic aspects of login component
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { login } from '../actions/LoginActions'
 
 class LoginContainer extends Component {
 
@@ -8,25 +10,16 @@ class LoginContainer extends Component {
     password: ''
   }
 
-  handleLogin = (event) => {
+  handleLogin = event => {
     event.preventDefault()
     const email = event.target.children.email.value
     const password = event.target.children.password.value
-    fetch('http://localhost:3000/api/user_token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        auth: {
-          email: email,
-          password: password
-        }
-      })
+    const auth = { auth: { email: email, password: password } }
+    this.props.login(auth)
+    this.setState({
+      email: '',
+      password: ''
     })
-    .then(resp => resp.json())
-    .then(data => localStorage.setItem('jwt', data.jwt))
-
   }
 
   handleOnChange = (event) => {
@@ -54,4 +47,8 @@ class LoginContainer extends Component {
 
 }
 
-export default LoginContainer
+const mapDispatchToProps = dispatch => {
+  return { login: auth => dispatch(login(auth)) }
+}
+
+export default connect(null, mapDispatchToProps)(LoginContainer)

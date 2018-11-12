@@ -1,4 +1,4 @@
-export default function manageSounds(state = {
+export default function soundsReducer(state = {
   sounds: [],
 }, action) {
   switch(action.type){

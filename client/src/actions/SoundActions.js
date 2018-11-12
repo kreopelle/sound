@@ -13,7 +13,7 @@
           alert('Something went wrong')
         }
         })
-      .then(sounds => dispatch({ type: 'FETCH_SOUNDS', sounds: sounds }))
+      .then(sounds => dispatch({ type: 'FETCH_SOUNDS', sounds }))
       .catch((error) => {
         console.log(error)
       })
@@ -32,6 +32,6 @@
         body: JSON.stringify(sound)
     })
     .then(resp => resp.json())
-    .then(data => dispatch({ type: 'POST_SOUND', payload: data }))
+    .then(sound => dispatch({ type: 'POST_SOUND', sound }))
     }
   }

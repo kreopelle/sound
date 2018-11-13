@@ -1,5 +1,3 @@
-require 'pry'
-
 class SoundSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 

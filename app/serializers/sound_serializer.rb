@@ -4,8 +4,7 @@ class SoundSerializer < ActiveModel::Serializer
   attributes :id, :title, :description, :sound_url
 
   def sound_url
-    variant = object.file.variant(resize: "100x100")
-    return rails_representation_url(variant, only_path: true)
+    return rails_blob_url(object.file)
   end
 
   belongs_to :user

@@ -7,9 +7,9 @@ class Sounds extends Component {
     const { sounds } = this.props
     const soundList = sounds.map((sound, id) => <Sound key={id} sound={sound} />)
     return (
-      <ul>
-      {soundList}
-      </ul>
+      <div>
+        {soundList}
+      </div>
     )
   }
 }

@@ -20,8 +20,11 @@ class CreateSound extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
+    const title = this.state.title
+    const description = this.state.description
+    const file = this.state.file
+    const sound = {sound: {title: title, description: description, file: file}}
     debugger
-    const sound = {sound: this.state}
     this.props.postSound(sound)
     this.setState({
       title: '',

@@ -22,14 +22,19 @@
 
   export function postSound(sound){
     return (dispatch) => {
-      dispatch({ type: 'START_POST_SOUND_REQUEST' })
+      // dispatch({ type: 'START_POST_SOUND_REQUEST' })
+      const soundData = new FormData()
+      soundData.append("sound[title]", sound.title)
+      soundData.append("sound[description]", sound.description)
+      soundData.append("sound[file]", sound.file)
+      debugger
       return fetch('/api/sounds', {
         method: 'POST',
+        body: soundData,
+        contentType: false,
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(sound)
+        }
     })
     .then(resp => resp.json())
     .then(sound => dispatch({ type: 'POST_SOUND', sound }))

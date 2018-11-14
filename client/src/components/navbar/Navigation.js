@@ -16,6 +16,9 @@ const Navigation = () => (
         <LinkContainer to="/sounds">
           <NavItem>Sounds</NavItem>
         </LinkContainer>
+        <LinkContainer to="/sounds/new">
+          <NavItem>New Sound</NavItem>
+        </LinkContainer>
         <LinkContainer to="/login">
           <NavItem>Login</NavItem>
         </LinkContainer>

@@ -22,13 +22,11 @@
 
   export function postSound(sound){
     return (dispatch) => {
-      // dispatch({ type: 'START_POST_SOUND_REQUEST' })
+      dispatch({ type: 'START_POST_SOUND_REQUEST' })
       const soundData = new FormData()
-      debugger
       soundData.append("sound[title]", sound.sound.title)
       soundData.append("sound[description]", sound.sound.description)
       soundData.append("sound[file]", sound.sound.file)
-      debugger
       return fetch('/api/sounds', {
         method: 'POST',
         body: soundData,

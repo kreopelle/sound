@@ -1,6 +1,5 @@
 // business logic for displaying sounds
 import React, { Component } from 'react'
-import CreateSound from '../components/sounds/CreateSound.js'
 import { connect } from 'react-redux'
 import Sounds from '../components/sounds/Sounds.js'
 import { fetchSounds } from '../actions/SoundActions'
@@ -25,10 +24,4 @@ const mapStateToProps = state => {
   return { sounds: state.sounds }
 }
 
-const mapDispatchToProps = dispatch => {
-  return { fetchSounds: () => dispatch(fetchSounds()),
-    postSound: (sound) => dispatch(postSound(sound))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SoundsContainer)
+export default connect(mapStateToProps, { fetchSounds })(SoundsContainer)

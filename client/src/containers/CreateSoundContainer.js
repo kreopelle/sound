@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { postSound } from '../actions/SoundActions'
-// import CreateSoundForm from '../components/sounds/CreateSoundForm'
 
 class CreateSound extends Component {
   constructor(props){
@@ -49,11 +48,10 @@ class CreateSound extends Component {
         <br />
         <form onSubmit={this.handleOnSubmit}>
           <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
-          <br /><br />
           <input type="text" name="description" id="description" placeholder="description" value={this.state.description} onChange={this.handleOnChange} />
-          <br /><br />
+          <br />
           <input type="file" name="file" id="file" onChange={this.handleUpload} />
-          <br /><br />
+          <br />
           <input type="submit" />
         </form>
       </div>

@@ -24,13 +24,13 @@ class CreateSound extends Component {
     const description = this.state.description
     const file = this.state.file
     const sound = {sound: {title: title, description: description, file: file}}
-    // sound object appears with proper structure, data is properly passed to the action
     this.props.postSound(sound)
     this.setState({
       title: '',
       description: '',
       file: null
     })
+    document.getElementById("file").value = null
   }
 
   handleUpload = event => {

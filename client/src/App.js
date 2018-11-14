@@ -2,7 +2,7 @@ import React from 'react';
 import LoginContainer from './containers/LoginContainer.js'
 import SoundsContainer from './containers/SoundsContainer.js'
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 
 const App = () => (
   <Router>
@@ -20,13 +20,13 @@ const Home = () => <h2>Home</h2>
 const Header = () => (
   <ul>
     <li>
-      <Link to="/">Home</Link>
+      <NavLink to="/">Home</NavLink>
     </li>
     <li>
-      <Link to="/sounds">Sounds</Link>
+      <NavLink to="/sounds">Sounds</NavLink>
     </li>
     <li>
-      <Link to="/login">Login</Link>
+      <NavLink to="/login">Login</NavLink>
     </li>
   </ul>
 );

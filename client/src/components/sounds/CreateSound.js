@@ -24,6 +24,12 @@ class CreateSound extends Component {
     })
   }
 
+  handleUpload = event => {
+    this.setState({
+      file: event.target.files[0]
+    })
+  }
+
   render(){
     return(
       <div>
@@ -31,6 +37,7 @@ class CreateSound extends Component {
           <label>create sound: </label>
           <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
           <input type="text" name="description" id="description" placeholder="description" value={this.state.description} onChange={this.handleOnChange} />
+          <input type="file" name="file" id="file" onChange={this.handleUpload} />
           <input type="submit" />
         </form>
       </div>

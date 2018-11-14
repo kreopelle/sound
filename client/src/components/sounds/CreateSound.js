@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 
 class CreateSound extends Component {
-  state = {
+  constructor(props){
+    super(props)
+    this.state = {
       title: '',
       description: '',
+      file: null
     }
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleOnSubmit = this.handleOnSubmit.bind(this)
+  }
 
   handleOnChange = event => {
     this.setState({
@@ -14,13 +20,13 @@ class CreateSound extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    const title = event.target.children.title.value
-    const description = event.target.children.description.value
-    const sound = {sound: {title: title, description: description}}
+    debugger
+    const sound = {sound: this.state}
     this.props.postSound(sound)
     this.setState({
       title: '',
-      description: ''
+      description: '',
+      file: null
     })
   }
 

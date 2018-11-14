@@ -2,8 +2,8 @@ import React from 'react';
 import LoginContainer from './containers/LoginContainer.js'
 import SoundsContainer from './containers/SoundsContainer.js'
 import CreateSoundContainer from './containers/CreateSoundContainer.js'
-import Navigation from './components/navbar/Navigation.js'
-import Home from './components/navbar/Home.js'
+import Navigation from './components/Navigation.js'
+import Home from './components/Home.js'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const App = () => (

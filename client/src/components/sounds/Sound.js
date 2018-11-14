@@ -4,7 +4,14 @@ import React from 'react'
 
 const Sound = ({ sound }) => {
   return (
-    <li><strong>{sound.title}</strong>: {sound.description}</li>
+    <li>
+      <p><strong>{sound.title}</strong>: {sound.description}</p>
+      <br />
+      <audio controls>
+        <source src={sound.sound_url} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </li>
   )
 }
 

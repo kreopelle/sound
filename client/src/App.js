@@ -19,24 +19,23 @@ const App = () => (
 const Home = () => <h2>Home</h2>
 
 const Header = () => (
-  <Navbar>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <NavLink to="/">Home</NavLink>
-    </Navbar.Brand>
-  </Navbar.Header>
-    <Nav>
-      <NavItem>
-        <NavLink to="/sounds">Sounds</NavLink>
-      </NavItem>
-      <NavDropdown eventKey={3} title="Login" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Action</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.4}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
+  <Navbar fluid collapseOnSelect>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <Link to="/">Home</Link>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav pullRight>
+        <LinkContainer to="/sounds">
+          <NavItem>Sounds</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/login">
+          <NavItem>Login</NavItem>
+        </LinkContainer>
+      </Nav>
+    </Navbar.Collapse>
   </Navbar>
 );
 

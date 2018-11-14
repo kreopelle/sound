@@ -19,9 +19,8 @@ class SoundsController < ApplicationController
 
   def create
     @sound = Sound.new(sound_params)
-
+        
     if @sound.save
-      @sound.file.attach(sound_params[:file])
       render json: @sound, status: :created, location: @sound
     else
       render json: @sound.errors, status: :unprocessable_entity

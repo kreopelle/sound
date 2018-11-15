@@ -10,10 +10,7 @@ const Sound = ({ sound }) => {
         <h3>{sound.title}</h3>
         <p>{sound.description}</p>
         <br />
-        <audio controls>
-          <source src={sound.sound_url} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
+        <AudioPlayer src={sound.sound_url}>
       </Thumbnail>
     </Col>
   )

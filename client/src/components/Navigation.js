@@ -26,3 +26,8 @@ const Navigation = () => (
 );
 
 export default Navigation
+
+
+// <NavItem>
+//   <NavLink onClick={this.logout} to="#">Logout</NavLink>
+// </NavItem>

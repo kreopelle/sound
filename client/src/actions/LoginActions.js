@@ -3,6 +3,7 @@
 // signup fetch request?
 
 export function login(auth){
+  debugger
   return (dispatch) => {
     dispatch({ type: 'START_LOGIN_REQUEST'})
     return fetch('http://localhost:3000/api/user_token', {
@@ -20,4 +21,9 @@ export function login(auth){
   }
 }
 
-// should the token be available in state?
+export function logout(){
+  return (dispatch) => {
+    localStorage.setItem('jwt', '')
+    dispatch({type: 'LOGOUT'})
+  }
+}

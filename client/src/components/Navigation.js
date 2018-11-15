@@ -2,6 +2,8 @@ import React from 'react'
 import { Navbar, NavItem, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
+// render navigation bar
+
 const Navigation = () => (
   <Navbar fluid collapseOnSelect>
   <Navbar.Header>

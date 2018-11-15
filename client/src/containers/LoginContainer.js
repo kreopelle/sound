@@ -1,7 +1,8 @@
-// logic aspects of login component
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { login } from '../actions/LoginActions'
+
+// business and presentational logic for login component
 
 class LoginContainer extends Component {
 

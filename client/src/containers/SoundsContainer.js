@@ -1,8 +1,9 @@
-// business logic for displaying sounds
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sounds from '../components/sounds/Sounds.js'
 import { fetchSounds } from '../actions/SoundActions'
+
+// business logic for displaying sounds
 
 class SoundsContainer extends Component {
   componentDidMount(){

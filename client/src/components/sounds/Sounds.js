@@ -1,6 +1,7 @@
-// code to create individual sound cards for all sounds in db
 import React, { Component } from 'react'
 import Sound from './Sound'
+
+// create individual sound cards for all sounds in db
 
 class Sounds extends Component {
   render(){

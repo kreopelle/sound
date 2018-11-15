@@ -1,5 +1,7 @@
 import React from 'react'
 
+// render content on static home page 
+
 const Home = () => {
   return(
     <div>

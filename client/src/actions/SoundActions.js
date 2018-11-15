@@ -1,6 +1,4 @@
 // fetch all sounds
-// fetch individual sound
-// post new sound
 
   export function fetchSounds(){
     return (dispatch) => {
@@ -19,6 +17,8 @@
       })
     }
   }
+
+// post new sound
 
   export function postSound(sound){
     return (dispatch) => {

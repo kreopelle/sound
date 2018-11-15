@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { postSound } from '../actions/SoundActions'
-//import { Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class CreateSound extends Component {
   constructor(props){
@@ -49,21 +48,6 @@ class CreateSound extends Component {
         <h2>Upload New Sound</h2>
         <br />
         <form onSubmit={this.handleOnSubmit}>
-          {/*
-          <Col xs={6} md={4}>
-            <FormGroup bsSize="small">
-              <FormControl
-                type="text"
-                name="title"
-                id="title"
-                placeholder="title"
-                value={this.state.title}
-                onChange={this.handleOnChange}
-              />
-            </FormGroup>
-          </Col>
-          */}
-
           <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />
           <input type="text" name="description" id="description" placeholder="description" value={this.state.description} onChange={this.handleOnChange} />
           <br /><br />
@@ -79,3 +63,18 @@ class CreateSound extends Component {
 }
 
 export default connect(null, { postSound })(CreateSound)
+
+//import { Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+
+// <Col xs={6} md={4}>
+//   <FormGroup bsSize="small">
+//     <FormControl
+//       type="text"
+//       name="title"
+//       id="title"
+//       placeholder="title"
+//       value={this.state.title}
+//       onChange={this.handleOnChange}
+//     />
+//   </FormGroup>
+// </Col>

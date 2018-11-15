@@ -6,6 +6,8 @@ import Navigation from './components/Navigation.js'
 import Home from './components/Home.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+// start react-router, render navigation bar and other components by route 
+
 const App = () => (
   <Router>
     <div>

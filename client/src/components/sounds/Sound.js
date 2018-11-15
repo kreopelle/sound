@@ -1,8 +1,7 @@
-// code to render an individual sound card
-// should render a comments container for comments related to the specific sound
-import React from 'react'
 import { Col, Thumbnail } from 'react-bootstrap'
 import AudioPlayer from './AudioPlayer.js'
+
+// render an individual sound card
 
 const Sound = ({ sound }) => {
   return (

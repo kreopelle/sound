@@ -1,5 +1,7 @@
 import React from 'react'
 
+// render audio player for sounds 
+
 const AudioPlayer = ({ src }) => {
   return(
     <audio controls>

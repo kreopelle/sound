@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar, NavItem, Nav } from 'react-bootstrap'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navigation = () => (
   <Navbar fluid collapseOnSelect>

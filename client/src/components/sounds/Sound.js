@@ -1,3 +1,4 @@
+import React from 'react'
 import { Col, Thumbnail } from 'react-bootstrap'
 import AudioPlayer from './AudioPlayer.js'
 

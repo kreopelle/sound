@@ -20,6 +20,7 @@ class LoginContainer extends Component {
       email: '',
       password: ''
     })
+    this.props.history.push('/sounds')
   }
 
   handleOnChange = (event) => {

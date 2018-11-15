@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { postSound } from '../actions/SoundActions'
-import { Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+//import { Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class CreateSound extends Component {
   constructor(props){
@@ -34,6 +34,7 @@ class CreateSound extends Component {
       file: null
     })
     document.getElementById("file").value = null
+    this.props.history.push("/sounds")
   }
 
   handleUpload = event => {

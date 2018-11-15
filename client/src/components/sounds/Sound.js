@@ -2,6 +2,7 @@
 // should render a comments container for comments related to the specific sound
 import React from 'react'
 import { Col, Thumbnail } from 'react-bootstrap'
+import AudioPlayer from './AudioPlayer.js'
 
 const Sound = ({ sound }) => {
   return (
@@ -10,7 +11,7 @@ const Sound = ({ sound }) => {
         <h3>{sound.title}</h3>
         <p>{sound.description}</p>
         <br />
-        <AudioPlayer src={sound.sound_url}>
+        <AudioPlayer src={sound.sound_url} />
       </Thumbnail>
     </Col>
   )

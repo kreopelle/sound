@@ -1,3 +1,5 @@
+import React from 'react'
+
 const AudioPlayer = ({ src }) => {
   return(
     <audio controls>
@@ -6,3 +8,5 @@ const AudioPlayer = ({ src }) => {
     </audio>
   )
 }
+
+export default AudioPlayer

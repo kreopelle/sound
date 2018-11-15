@@ -34,8 +34,8 @@
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         }
-    })
-    .then(resp => resp.json())
-    .then(sound => dispatch({ type: 'POST_SOUND', sound }))
+      })
+      .then(resp => resp.json())
+      .then(sound => dispatch({ type: 'POST_SOUND', sound }))
     }
   }

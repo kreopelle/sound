@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sounds from '../components/sounds/Sounds.js'
-import { fetchSounds } from '../actions/SoundActions'
-
-// business logic for displaying sounds
 
 class SoundsContainer extends Component {
-  componentDidMount(){
-    this.props.fetchSounds()
-  }
 
   render() {
     return (
@@ -18,11 +12,10 @@ class SoundsContainer extends Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {
   return { sounds: state.sounds }
 }
 
-export default connect(mapStateToProps, { fetchSounds })(SoundsContainer)
+export default connect(mapStateToProps)(SoundsContainer)

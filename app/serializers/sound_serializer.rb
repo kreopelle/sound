@@ -7,4 +7,6 @@ class SoundSerializer < ActiveModel::Serializer
     return rails_blob_url(object.file)
   end
 
+  belongs_to :user
+
 end

@@ -1,6 +1,6 @@
 {
   "short_name": "Listen",
-  "name": "Listen an App for Field Recordings",
+  "name": "Listen – Share Field Recordings",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",

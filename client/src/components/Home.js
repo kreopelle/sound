@@ -1,14 +1,16 @@
 import React from 'react'
+import { Jumbotron, Button, Clearfix } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-// render content on static home page 
+// render content on static home page
 
-const Home = () => {
-  return(
-    <div>
-      <h2>Home</h2>
-      <p>Welcome to my React/Redux app!</p>
-    </div>
-  )
-}
+const Home = () =>
+
+<Clearfix>
+    <Jumbotron>
+      <h1>herzlich willkommen</h1>
+        <p>listen to and share recordings from the field</p>
+  </Jumbotron>
+</Clearfix>;
 
 export default Home

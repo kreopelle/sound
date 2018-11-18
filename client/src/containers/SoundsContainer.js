@@ -7,7 +7,7 @@ class SoundsContainer extends Component {
   render() {
     return (
       <div className='sounds'>
-        <h1>Sounds</h1>
+        <h1 className="text-center">Sounds</h1>
         <Sounds sounds={this.props.sounds} />
       </div>
     )

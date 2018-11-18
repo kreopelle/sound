@@ -45,7 +45,7 @@ class CreateSound extends Component {
   render(){
     return(
       <div>
-        <h2>Upload New Sound</h2>
+        <h2>upload sound</h2>
         <br />
         <form onSubmit={this.handleOnSubmit}>
           <input type="text" name="title" id="title" placeholder="title" onChange={this.handleOnChange} value={this.state.title} />

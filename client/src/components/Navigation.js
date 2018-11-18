@@ -8,7 +8,7 @@ const Navigation = () => (
   <Navbar fluid collapseOnSelect>
   <Navbar.Header>
     <Navbar.Brand>
-      <NavLink to="/">Home</NavLink>
+      <NavLink to="/">Listen</NavLink>
     </Navbar.Brand>
   </Navbar.Header>
   <Navbar.Collapse>
@@ -19,9 +19,11 @@ const Navigation = () => (
       <NavItem>
         <NavLink to="/sounds/new">New Sound</NavLink>
       </NavItem>
+      {/*
       <NavItem>
         <NavLink to="/login">Login</NavLink>
       </NavItem>
+      */}
     </Nav>
   </Navbar.Collapse>
   </Navbar>

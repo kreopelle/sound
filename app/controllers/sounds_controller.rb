@@ -1,6 +1,5 @@
 require 'pry'
 class SoundsController < ApplicationController
-  before_action :authenticate_user, only: [:create, :update, :destroy]
   before_action :set_sound, only: [:show, :update, :destroy]
 
   def index
@@ -14,7 +13,7 @@ class SoundsController < ApplicationController
   end
 
   def create
-    @sound = current_user.sounds.build(sound_params)
+    @sound = Sound.new(sound_params)
     if @sound.save
       render json: @sound, status: :created, location: @sound
     else

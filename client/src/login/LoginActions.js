@@ -1,6 +1,4 @@
 // login fetch request
-// logout fetch request? to delete the session?
-// signup fetch request?
 
 export function login(auth){
   debugger
@@ -20,6 +18,8 @@ export function login(auth){
     })
   }
 }
+
+// logout fetch request
 
 export function logout(){
   return (dispatch) => {

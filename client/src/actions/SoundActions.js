@@ -39,3 +39,9 @@
       .then(sound => dispatch({ type: 'POST_SOUND', sound }))
     }
   }
+
+// delete sound
+
+  export function deleteSound(sound){
+    
+  }

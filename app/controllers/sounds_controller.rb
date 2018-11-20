@@ -1,16 +1,8 @@
-require 'pry'
 class SoundsController < ApplicationController
-  before_action :authenticate_user, only: [:create, :update, :destroy]
   before_action :set_sound, only: [:show, :update, :destroy]
-
-  # for admin only access
-  # if current_user.admin?
-    # => add code here to grant admin access
-  # end
 
   def index
     @sounds = Sound.all
-
     render json: @sounds
   end
 
@@ -19,7 +11,7 @@ class SoundsController < ApplicationController
   end
 
   def create
-    @sound = current_user.sounds.build(sound_params)
+    @sound = Sound.new(sound_params)
     if @sound.save
       render json: @sound, status: :created, location: @sound
     else

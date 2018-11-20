@@ -63,18 +63,3 @@ class CreateSound extends Component {
 }
 
 export default connect(null, { postSound })(CreateSound)
-
-//import { Col, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
-
-// <Col xs={6} md={4}>
-//   <FormGroup bsSize="small">
-//     <FormControl
-//       type="text"
-//       name="title"
-//       id="title"
-//       placeholder="title"
-//       value={this.state.title}
-//       onChange={this.handleOnChange}
-//     />
-//   </FormGroup>
-// </Col>

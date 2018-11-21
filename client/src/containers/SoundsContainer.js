@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Sound from '../components/Sound.js'
 import { deleteSound, favoriteSound } from '../actions/SoundActions.js'
+import Search from '../components/Search.js'
 
 class SoundsContainer extends Component {
 
@@ -10,8 +11,9 @@ class SoundsContainer extends Component {
     const soundList = sounds.map((sound, id) => <Sound key={id} sound={sound} deleteSound={deleteSound} favoriteSound={favoriteSound} />)
 
     return (
-      <div>
+      <div className="container" >
         <h1 className="text-center">Sounds</h1>
+        <Search />
         {soundList}
       </div>
     )

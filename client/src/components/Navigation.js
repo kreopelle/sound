@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, NavItem, Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import Search from './Search'
 
 // render navigation bar
 
@@ -19,6 +20,9 @@ const Navigation = () => (
       <NavItem>
         <NavLink to="/sounds/new">New Sound</NavLink>
       </NavItem>
+    </Nav>
+    <Nav pullRight>
+      <Search />
     </Nav>
   </Navbar.Collapse>
   </Navbar>

@@ -29,17 +29,8 @@ class SoundsContainer extends Component {
 
     return (
       <div className="container" >
-        <Col xs={6} md={4}>
-          <Thumbnail>
-            <h1> Sounds </h1>
-            <p> Start typing to filter sounds by title or description </p>
-            <br />
-            <form>
-              <input type="text" id="query" placeholder="Filter Sounds" value={this.state.query} onChange={this.onQuery} /> <input className="btn btn-info" type="submit" value="Search" />
-            </form>
-            </Thumbnail>
-        </Col>
-        {soundList}
+      <Search onQuery={this.onQuery} />
+      {soundList}
       </div>
     )
   }

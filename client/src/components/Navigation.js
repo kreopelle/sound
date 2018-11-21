@@ -19,18 +19,9 @@ const Navigation = () => (
       <NavItem>
         <NavLink to="/sounds/new">New Sound</NavLink>
       </NavItem>
-      {/*
-      <NavItem>
-        <NavLink to="/login">Login</NavLink>
-      </NavItem>
-      */}
     </Nav>
   </Navbar.Collapse>
   </Navbar>
 );
 
 export default Navigation
-
-// <NavItem>
-//   <NavLink to="/logout">Logout</NavLink>
-// </NavItem>

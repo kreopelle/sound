@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginContainer from './containers/LoginContainer.js'
 import SoundsContainer from './containers/SoundsContainer.js'
 import CreateSoundContainer from './containers/CreateSoundContainer.js'
 import Navigation from './components/Navigation.js'
@@ -20,7 +19,6 @@ class App extends React.Component {
           <Navigation />
           <Route path="/sounds/new" component={CreateSoundContainer} />
           <Route exact path="/sounds" component={SoundsContainer} />
-          <Route path="/login" component={LoginContainer} />
           <Route exact path="/" component={Home} />
         </div>
       </Router>

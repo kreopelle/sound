@@ -1,5 +1,4 @@
 class SoundsController < ApplicationController
-  include ErrorSerializer
   before_action :set_sound, only: [:show, :update, :destroy]
 
   def index

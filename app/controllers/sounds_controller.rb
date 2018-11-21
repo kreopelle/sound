@@ -1,4 +1,5 @@
 class SoundsController < ApplicationController
+  include ErrorSerializer
   before_action :set_sound, only: [:show, :update, :destroy]
 
   def index
@@ -11,11 +12,11 @@ class SoundsController < ApplicationController
   end
 
   def create
-    @sound = Sound.new(sound_params)
-    if @sound.save
-      render json: @sound, status: :created, location: @sound
+    sound = Sound.new(sound_params)
+    if sound.save
+      render json: sound, status: :created, location: sound
     else
-      render json: @sound.errors, status: :unprocessable_entity
+      render json: ErrorSerializer.serialize(sound.errors)
     end
   end
 

@@ -12,7 +12,7 @@ const Sound = ({ sound, deleteSound, favoriteSound }) => {
         <p>{sound.description}</p>
         <br />
         <AudioPlayer src={sound.sound_url} />
-      </Thumbnail>
+        </Thumbnail>
     </Col>
   )
 }

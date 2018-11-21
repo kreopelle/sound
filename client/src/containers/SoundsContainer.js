@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import Sound from '../components/Sound.js'
 import { deleteSound, favoriteSound } from '../actions/SoundActions.js'
 import Search from '../components/Search.js'
-import { Col, Thumbnail } from 'react-bootstrap'
 
 class SoundsContainer extends Component {
   constructor(props){

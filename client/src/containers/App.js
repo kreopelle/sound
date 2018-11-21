@@ -1,11 +1,11 @@
 import React from 'react';
-import SoundsContainer from './containers/SoundsContainer.js'
-import CreateSoundContainer from './containers/CreateSoundContainer.js'
-import Navigation from './components/Navigation.js'
-import Home from './components/Home.js'
+import SoundsContainer from './SoundsContainer.js'
+import CreateSoundContainer from './CreateSoundContainer.js'
+import Navigation from '../components/Navigation.js'
+import Home from '../components/Home.js'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { fetchSounds } from './actions/SoundActions'
+import { fetchSounds } from '../actions/SoundActions'
 
 class App extends React.Component {
   componentDidMount(){

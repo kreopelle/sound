@@ -39,6 +39,12 @@
 
 // delete sound
 
-  export function deleteSound(sound){
+  export function deleteSound(soundId){
+    return {type: 'DELETE_SOUND', soundId }
+  }
 
+// favoriteSound
+
+  export function favoriteSound(soundId){
+    return {type: 'FAVORITE_SOUND', soundId }
   }

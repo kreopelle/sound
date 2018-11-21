@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Sounds from '../components/sounds/Sounds.js'
+import Sound from '../components/sounds/Sound.js'
+import { deleteSound, favoriteSound } from '../actions/SoundActions.js'
 
 class SoundsContainer extends Component {
 
   render() {
+    const { sounds, deleteSound, favoriteSound } = this.props
+    const soundList = sounds.map((sound, id) => <Sound key={id} sound={sound} deleteSound={deleteSound} favoriteSound={favoriteSound} />)
+
     return (
-      <div className='sounds'>
+      <div>
         <h1 className="text-center">Sounds</h1>
-        <Sounds sounds={this.props.sounds} />
+        {soundList}
       </div>
     )
   }
@@ -18,4 +22,15 @@ const mapStateToProps = state => {
   return { sounds: state.sounds }
 }
 
-export default connect(mapStateToProps)(SoundsContainer)
+const mapDispatchToProps = (dispatch, soundId) => {
+  return {
+    deleteSound: (soundId) => {
+      dispatch(deleteSound(soundId))
+    },
+    favoriteSound: (soundId) => {
+      dispatch(favoriteSound(soundId))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SoundsContainer)

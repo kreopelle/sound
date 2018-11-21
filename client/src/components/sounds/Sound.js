@@ -4,7 +4,7 @@ import AudioPlayer from './AudioPlayer.js'
 
 // render an individual sound card
 
-const Sound = ({ sound }) => {
+const Sound = ({ sound, deleteSound, favoriteSound }) => {
   return (
     <Col xs={6} md={4}>
       <Thumbnail>

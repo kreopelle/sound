@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Sound from '../components/sounds/Sound.js'
+import Sound from '../components/Sound.js'
 import { deleteSound, favoriteSound } from '../actions/SoundActions.js'
 
 class SoundsContainer extends Component {
